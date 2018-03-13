@@ -3,8 +3,17 @@
 const exec = require('child_process').exec;
 const chalk = require('chalk');
 
+const args = process.argv;
+
 exec("git remote get-url --push origin", function (err, stdout, stderr) {
-    let ret = stdout.trim().replace(':','/').replace('git@', 'https://');
+    
+    let ret = stdout.trim().replace(':','/').replace('git@', 'https://').replace('.git','');
+
+    // I'm passing a hash, show me the commit
+    if (args.length > 1) {
+        ret += `/commit/${args[2]}`;
+    }
+    
     if (ret) {
         exec(`open "${ret}"`);
     } else {
