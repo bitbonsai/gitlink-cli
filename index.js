@@ -10,7 +10,7 @@ exec("git remote get-url --push origin", function (err, stdout, stderr) {
     let ret = stdout.trim().replace(':','/').replace('git@', 'https://').replace('.git','');
 
     // I'm passing a hash, show me the commit
-    if (args.length > 1) {
+    if (args.length > 2) {
         ret += `/commit/${args[2]}`;
     }
     
