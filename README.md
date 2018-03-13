@@ -14,4 +14,5 @@ Tested on mac only, created in a few minutes in node after banging my head on th
 3. `npm link` also works, if you're not into yarn.
 
 ## Usage
-Just go to a repo and type `gitlink`. Nothing else.
+Just go to a repo and type `gitlink` to open a browser window with the repo
+Or add part of a `sha1` to it and open a single commit page: `gitlink b844b99` (thanks for the idea, @ricardobeat)
