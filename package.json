@@ -1,0 +1,16 @@
+{
+  "name": "gitlink",
+  "version": "1.0.0",
+  "description": "Open gitlab/github/bitbucket in a browser from the console, using git remote as input",
+  "main": "index.js",
+  "author": "Mauricio Wolff <mauricio.wolff+npm@gmail.com> (http://mauriciowolff.com)",
+  "license": "MIT",
+  "bin": {
+    "gitlink": "index.js"
+  },
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "child_process": "^1.0.2",
+    "npm": "^5.7.1"
+  }
+}
