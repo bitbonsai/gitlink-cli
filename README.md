@@ -9,8 +9,9 @@ If you're not on a git repo, there's a nice and color error message.
 Tested on mac only, created in a few minutes in node after banging my head on the table trying to make it work on bash.
 
 ## Installation
-`yarn link` in the directory is the fastest/easiest way to install.
-`npm link` also works, if you're not into yarn.
+1. Clone this repo somewhere in your computer: `git clone https://github.com/bitbonsai/gitlink.git`
+2. `yarn link` in the directory is the fastest/easiest way to install.
+3. `npm link` also works, if you're not into yarn.
 
 ## Usage
 Just go to a repo and type `gitlink`. Nothing else.
