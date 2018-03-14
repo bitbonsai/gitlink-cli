@@ -2,8 +2,9 @@
 
 const exec = require('child_process').exec;
 const chalk = require('chalk');
-
 const args = process.argv;
+
+let commit_path = 'commit';
 
 exec("git remote get-url --push origin", function (err, stdout, stderr) {
     
@@ -11,7 +12,10 @@ exec("git remote get-url --push origin", function (err, stdout, stderr) {
 
     // I'm passing a hash, show me the commit
     if (args.length > 2) {
-        ret += `/commit/${args[2]}`;
+        if (ret.indexOf('bitbucket') != -1) {
+            commit_path = 'commits';
+        } 
+            ret += `/${commit_path}/${args[2]}`;
     }
     
     if (ret) {
