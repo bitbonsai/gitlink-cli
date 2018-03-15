@@ -5,12 +5,12 @@
   "main": "index.js",
   "author": "Mauricio Wolff <mauricio.wolff+npm@gmail.com> (http://mauriciowolff.com)",
   "license": "MIT",
+  "repository": "https://github.com/bitbonsai/gitlink",
   "bin": {
     "gitlink": "index.js"
   },
   "dependencies": {
     "chalk": "^2.3.2",
-    "child_process": "^1.0.2",
-    "npm": "^5.7.1"
+    "child_process": "^1.0.2"
   }
 }
