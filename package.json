@@ -1,13 +1,13 @@
 {
-  "name": "@bitbonsai/gitremote",
+  "name": "@bitbonsai/gitlink-cli",
   "version": "1.0.0",
   "description": "Open gitlab/github/bitbucket in a browser from the console, using git remote as input",
   "main": "index.js",
   "author": "Mauricio Wolff <mauricio.wolff+npm@gmail.com> (http://mauriciowolff.com)",
   "license": "MIT",
-  "repository": "https://github.com/bitbonsai/gitremote",
+  "repository": "https://github.com/bitbonsai/gitlink-cli",
   "bin": {
-    "gitremote": "index.js"
+    "gitlink": "index.js"
   },
   "dependencies": {
     "chalk": "^2.3.2",
