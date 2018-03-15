@@ -1,5 +1,5 @@
 {
-  "name": "@bitbonsai/gitlink-cli",
+  "name": "gitlink-cli",
   "version": "1.0.0",
   "description": "Open gitlab/github/bitbucket in a browser from the console, using git remote as input",
   "main": "index.js",
