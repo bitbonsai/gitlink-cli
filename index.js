@@ -6,21 +6,25 @@ const args = process.argv;
 
 let commit_path = 'commit';
 
-exec("git remote get-url --push origin", function (err, stdout, stderr) {
-    
-    let ret = stdout.trim().replace(':','/').replace('git@', 'https://').replace('.git','');
+// first, get the remote's name
+exec('git remote -v', function (err, stdout, stderr) {
+    origin  =stdout.split('\n')[0].split('\t')[0]
+    exec(`git remote get-url --push ${origin}`, function (err, stdout, stderr) {
 
-    // I'm passing a hash, show me the commit
-    if (args.length > 2) {
-        if (ret.indexOf('bitbucket') != -1) {
-            commit_path = 'commits';
-        } 
-            ret += `/${commit_path}/${args[2]}`;
-    }
-    
-    if (ret) {
-        exec(`open "${ret}"`);
-    } else {
-        console.log(`${chalk.bgRed.bold(' ERROR: ')} ${chalk.red('No git remote found. The current path is:')} ${chalk.blue(__dirname)}`);
-    }
+        let ret = stdout.trim().replace(':','/').replace('git@', 'https://').replace('.git','');
+
+        // I'm passing a hash, show me the commit
+        if (args.length > 2) {
+            if (ret.indexOf('bitbucket') != -1) {
+                commit_path = 'commits';
+            }
+                ret += `/${commit_path}/${args[2]}`;
+        }
+
+        if (ret) {
+            exec(`open "${ret}"`);
+        } else {
+            console.log(`${chalk.bgRed.bold(' ERROR: ')} ${chalk.red('No git remote found. The current path is:')} ${chalk.blue(__dirname)}`);
+        }
+    });
 });
