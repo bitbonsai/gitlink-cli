@@ -12,6 +12,7 @@ Tested on mac only, created in a few minutes in node after banging my head on th
 
 ### Package managers (`yarn`, `npm`)
 `yarn global add gitlink-cli`
+
 `npm -g install gitlink-cli`
 
 ### Cloning
@@ -20,6 +21,6 @@ Tested on mac only, created in a few minutes in node after banging my head on th
 3. `npm link` also works, if you're not into yarn.
 
 ## Usage
-Just go to a repo and type `gitlink` to open a browser window with the repo
+Just go to a repo and type `gitlink` to open a browser window with the repo. If you're not on a mac, it will just print the URL, so you can command click (for my friends who work from ssh)
 
 Or add part of a `sha1` to it and open a single commit page: `gitlink b844b99` (thanks for the idea, @ricardobeat)
