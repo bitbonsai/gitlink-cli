@@ -24,7 +24,11 @@ exec('git remote -v', function (err, stdout, stderr) {
     origin = stdout.split('\n')[0].split('\t')[0]
     exec(`git remote get-url --push ${origin}`, function (err, stdout, stderr) {
 
-        let ret = stdout.trim().replace(':','/').replace('git@', 'https://').replace('.git','');
+        let ret = stdout.trim().replace(/\.git$/,'');
+
+        if( /^git@/.test(ret) ) {
+            ret = ret.replace(':','/').replace(/^git@/, 'https://');
+        }
 
         // I'm passing a hash, show me the commit
         if (args.length > 2) {
