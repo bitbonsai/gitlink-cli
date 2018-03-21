@@ -1,6 +1,6 @@
 {
   "name": "gitlink-cli",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "description": "Open gitlab/github/bitbucket in a browser from the console, using git remote as input",
   "main": "index.js",
   "author": "Mauricio Wolff <mauricio.wolff+npm@gmail.com> (http://mauriciowolff.com)",
