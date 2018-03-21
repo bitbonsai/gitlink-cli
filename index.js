@@ -44,7 +44,7 @@ function openUrl(url) {
 
 // get the current branch
 exec('git symbolic-ref -q HEAD', function (err, stdout, stderr) {
-    branch = stdout.trim().split('/').pop();
+    branch = stdout.trim().replace('refs/heads/','');
 });
 
 // get the remote's name
