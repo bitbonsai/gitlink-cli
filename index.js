@@ -65,7 +65,7 @@ exec('git remote -v', function (err, stdout, stderr) {
             }
             ret += `/${commit_path}/${args[0]}`;
         } else {
-            if (branch != 'master') {
+            if (branch != 'master' && branch != 'main') {
                 if (ret.indexOf('bitbucket') != -1) {
                     ret += `/branch/${branch}`
                 } else {
@@ -74,7 +74,7 @@ exec('git remote -v', function (err, stdout, stderr) {
             }
         }
 
-        if (ret) {
+        if (ret &&  ret !== '/tree/') {
             if (opts.print) {
                 printUrl(ret);
             } else {
